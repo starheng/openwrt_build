@@ -84,7 +84,7 @@ jobs:
         run: |
           cd openwrt
           rm -f .config*
-          cp ../Lienol/main/x86_64.config .config
+          cp ../Lienol/main/K2P.config .config
           make defconfig
 
       - name: 下载编译所需源码
