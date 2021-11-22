@@ -77,9 +77,6 @@ jobs:
           echo -e "src-git diy1 https://github.com/xiaorouji/openwrt-passwall.git;main" >> feeds.conf.default
           echo -e "src-git miaoxw https://github.com/miaoxinwei/openwrt-package" >> feeds.conf.default
 
-          sed -i 's/4.9/4.19/' target/linux/x86/Makefile
-          sed -i 's/4.14/4.19/' target/linux/x86/Makefile
-          
           ./scripts/feeds clean
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -88,7 +85,7 @@ jobs:
         run: |
           cd openwrt
           rm -f .config*
-          cp ../Lienol/19.07/x86_64.config .config
+          cp ../Lienol/19.07/K2P.config .config
           make defconfig
 
       - name: 下载编译所需源码
